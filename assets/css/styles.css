@@ -243,23 +243,24 @@ h1, h2, h3, h4, .font-display {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 86px;
+  height: 80px;
   transition: height var(--transition);
 }
 
 .site-header.scrolled .navbar {
-  height: 72px;
+  height: 68px;
 }
 
 .brand-link {
   display: flex;
   align-items: center;
-  gap: 0.95rem;
+  gap: 0.85rem;
+  flex-shrink: 0;
 }
 
 .brand-logo-img {
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   object-fit: cover;
   border: 1.5px solid var(--color-gold);
@@ -272,35 +273,39 @@ h1, h2, h3, h4, .font-display {
 
 .brand-name {
   font-family: var(--font-display);
-  font-size: 0.98rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   color: var(--color-white);
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 .brand-sub {
-  font-size: 0.64rem;
+  font-size: 0.6rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.15em;
   color: var(--color-stone);
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.9rem;
+  gap: clamp(0.9rem, 1.4vw, 1.6rem);
   list-style: none;
+  margin: 0 1rem;
 }
 
 .nav-link {
-  font-size: 0.86rem;
+  font-size: 0.82rem;
   font-weight: 500;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.85);
   position: relative;
   padding: 0.35rem 0;
+  white-space: nowrap;
 }
 
 .nav-link::after {
@@ -325,7 +330,17 @@ h1, h2, h3, h4, .font-display {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
+  flex-shrink: 0;
+}
+
+.nav-actions .btn {
+  white-space: nowrap;
+  padding: 0.62rem 1.25rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  border-radius: 3px;
+  line-height: 1.2;
 }
 
 .nav-toggle {
@@ -338,8 +353,8 @@ h1, h2, h3, h4, .font-display {
 }
 
 .nav-toggle svg {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
 }
 
 /* ==========================================================================
@@ -348,9 +363,9 @@ h1, h2, h3, h4, .font-display {
 
 .hero-section {
   position: relative;
-  min-height: 100vh;
-  padding-top: 120px;
-  padding-bottom: 5rem;
+  min-height: 90vh;
+  padding-top: clamp(95px, 11vh, 125px);
+  padding-bottom: clamp(2.5rem, 4vw, 4rem);
   background-color: var(--color-primary);
   color: var(--color-white);
   display: flex;
@@ -375,7 +390,7 @@ h1, h2, h3, h4, .font-display {
   z-index: 2;
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: 4rem;
+  gap: 3.5rem;
   align-items: center;
 }
 
@@ -385,32 +400,32 @@ h1, h2, h3, h4, .font-display {
 
 .hero-title {
   color: var(--color-white);
-  font-size: clamp(2.4rem, 4.3vw, 3.9rem);
+  font-size: clamp(2.2rem, 3.8vw, 3.6rem);
   font-weight: 700;
   line-height: 1.16;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.2rem;
 }
 
 .hero-subtitle {
-  font-size: clamp(1.08rem, 1.35vw, 1.25rem);
+  font-size: clamp(1rem, 1.25vw, 1.18rem);
   color: var(--color-stone);
   font-weight: 300;
-  line-height: 1.65;
-  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
 .hero-btn-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.1rem;
-  margin-bottom: 3rem;
+  gap: 1rem;
+  margin-bottom: 2.2rem;
 }
 
 .hero-data-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  padding-top: 2rem;
+  padding-top: 1.8rem;
   border-top: 1px solid var(--color-border-light);
 }
 
@@ -420,15 +435,15 @@ h1, h2, h3, h4, .font-display {
 }
 
 .hero-data-label {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-gold);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
 .hero-data-val {
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   font-weight: 500;
   color: var(--color-white);
 }
@@ -447,7 +462,7 @@ h1, h2, h3, h4, .font-display {
 
 .hero-img {
   width: 100%;
-  height: 540px;
+  height: clamp(380px, 50vh, 500px);
   object-fit: cover;
   object-position: center;
   transition: transform var(--transition-slow);
